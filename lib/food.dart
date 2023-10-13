@@ -48,7 +48,7 @@ class _FoodState extends State<Food> {
     // Check if there is a Scaffold widget in the widget tree
     if (ScaffoldMessenger.of(context).mounted) {
       final String updateDataEndpoint = 'http://localhost:3000/updateData';
-      final String token = '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';
+      final String token = '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';
       final String username = 'melmorsy2010';
       final String repository = 'Retailtribebuffet';
       final String branch = 'main';
@@ -133,18 +133,27 @@ class _FoodState extends State<Food> {
                             key: ValueKey(item), // <-- required for reorderable list
                             margin: EdgeInsets.only(bottom: 16),
                             child: ListTile(
-                              leading: Image.network(
-                                item['image_url'],
-                                width: 50,
-                                height: 50,
-                                fit: BoxFit.cover,
-                              ),
-                              title: Text(
-                                item['name'],
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                ),
+                              key: ValueKey(item),
+                              contentPadding: EdgeInsets.zero, // Set contentPadding to zero
+                              title: Row( // Use a Row to arrange the leading image and title
+                                children: [
+                                  Container( // Wrap the leading image in a Container to control its size
+                                    width: 56, // Set the desired width
+                                    height: 56, // Set the desired height
+                                    child: Image.network(
+                                      item['image_url'],
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  SizedBox(width: 16), // Add some spacing between leading and title
+                                  Text(
+                                    item['name'],
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                ],
                               ),
                               trailing: IconButton(
                                 icon: Icon(Icons.delete),

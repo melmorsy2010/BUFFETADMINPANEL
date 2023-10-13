@@ -49,7 +49,7 @@ class _FoodState extends State<Food4> {
     // Check if there is a Scaffold widget in the widget tree
     if (ScaffoldMessenger.of(context).mounted) {
       final String updateDataEndpoint = 'http://localhost:3000/updateData';
-      final String token = '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';
+      final String token = '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';
       final String username = 'melmorsy2010';
       final String repository = 'Retailtribebuffet';
       final String branch = 'main';
