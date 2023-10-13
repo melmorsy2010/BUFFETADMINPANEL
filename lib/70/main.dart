@@ -49,7 +49,7 @@ class _JsonData3State extends State<JsonData3> {
     // Check if there is a Scaffold widget in the widget tree
     if (ScaffoldMessenger.of(context).mounted) {
       final String updateDataEndpoint = 'http://localhost:3000/updateData';
-      final String token = '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';
+      final String token = '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';
       final String username = 'melmorsy2010';
       final String repository = 'Retailtribebuffet';
       final String branch = 'main';
